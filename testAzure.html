@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+    <link href="http://mingfeiy.azurewebsites.net//Content/css?v=HMMhdy8f2fch_ApjLwFdGt9X2HF16_94OB22Qk_o6wA1" rel="stylesheet" />
+
+    <script src="http://mingfeiy.azurewebsites.net//bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    
+    <link href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <script src="//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+    <script>
+        amp.options.flashSS.swf = "//amp.azure.net/libs/amp/latest/techs/StrobeMediaPlayback.2.0.swf"
+        amp.options.flashSS.plugin = "//amp.azure.net/libs/amp/latest/techs/MSAdaptiveStreamingPlugin-osmf2.0.swf"
+        amp.options.silverlightSS.xap = "//amp.azure.net/libs/amp/latest/techs/SmoothStreamingPlayer.xap"
+    </script>
+
+</head>
+<body>
+    
+    <div class="container body-content">
+
+        
+        <div class="row">
+            
+           
+            <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400" data-setup='{"techOrder": ["azureHtml5JS", "flashSS", "silverlightSS", "html5"], "nativeControlsForTouch": false}'>
+
+                <source src="https://cdn-cvprhkn01m01.streaming.mediaservices.windows.net/af2a8d9b-0d81-4f2b-b9c5-7a866c41505a/4ccdd7de-2a50-40de-ae22-933532cdcc26.ism/Manifest"
+                        type="application/vnd.ms-sstr+xml"
+                        data-setup='{"protectionInfo": [{"type": "AES", "authenticationToken": "Bearer=urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=1640cfdf-845f-465b-9e3c-d56f8e3333c6&amp;urn%3amicrosoft%3aazure%3amediaservices%3akeyacquisitionhostname=cvprhkn01m01.keydelivery.mediaservices.windows.net&amp;http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net&amp;urn%3aServiceAccessible=service&amp;Audience=urn%3aNimbus&amp;ExpiresOn=1474714102&amp;Issuer=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net%2f&amp;HMACSHA256=jiZasu51Xj3WetUrkw7Rvt%2fa0naqfcAUq%2fxFYx7Bk8Q%3d"}],"streamingFormats":["SMOOTH","DASH"]}' />
+                <source src="/Home/Manifest?playbackUrl=https://cdn-cvprhkn01m01.streaming.mediaservices.windows.net/af2a8d9b-0d81-4f2b-b9c5-7a866c41505a/4ccdd7de-2a50-40de-ae22-933532cdcc26.ism/Manifest(format=m3u8-aapl)&webtoken=urn%253amicrosoft%253aazure%253amediaservices%253acontentkeyidentifier%3d1640cfdf-845f-465b-9e3c-d56f8e3333c6%26urn%253amicrosoft%253aazure%253amediaservices%253akeyacquisitionhostname%3dcvprhkn01m01.keydelivery.mediaservices.windows.net%26http%253a%252f%252fschemas.microsoft.com%252faccesscontrolservice%252f2010%252f07%252fclaims%252fidentityprovider%3dhttps%253a%252f%252fnimbuslkgglobacs.accesscontrol.windows.net%26urn%253aServiceAccessible%3dservice%26Audience%3durn%253aNimbus%26ExpiresOn%3d1474714102%26Issuer%3dhttps%253a%252f%252fnimbuslkgglobacs.accesscontrol.windows.net%252f%26HMACSHA256%3djiZasu51Xj3WetUrkw7Rvt%252fa0naqfcAUq%252fxFYx7Bk8Q%253d" type="application/vnd.apple.mpegurl" data-setup='{"disableUrlRewriter": true}' />
+            </video>
+
+           
+
+        </div>
+    </div>
+
+    <script src="http://mingfeiy.azurewebsites.net//bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    <script src="http://mingfeiy.azurewebsites.net//bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+
+</body>
+</html>
+
