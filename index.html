@@ -21,9 +21,11 @@
 <body>
     
         Manifest URL:<br />
-        <input type="text" name="playbackurl" value="http://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest" size="150"/><br />
+        <input type="text" id="playbackurl" value="http://amssamples.streaming.mediaservices.windows.net/830584f8-f0c8-4e41-968b-6538b9380aa5/TearsOfSteelTeaser.ism/manifest" size="150"/><br />
         SWT :<br />
-        <input type="text" name="webtoken" value="Bearer=urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=8a250c36-10db-42c2-8812-8c153b3b7872&urn%3amicrosoft%3aazure%3amediaservices%3akeyacquisitionhostname=cvprsg101m01.keydelivery.mediaservices.windows.net&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net&urn%3aServiceAccessible=service&Audience=urn%3aNimbus&ExpiresOn=1474877919&Issuer=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net%2f&HMACSHA256=IYKABTrdpvpzYI9LOL5GNcjTlFU3QJ%2fcGPvc9IEDD4s%3d" size="150"/><br /><br />
+        <input type="text" id="webtoken" value="Bearer=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cm46bWljcm9zb2Z0OmF6dXJlOm1lZGlhc2VydmljZXM6Y29udGVudGtleWlkZW50aWZpZXIiOiI5ZGRhMGJjYy01NmZiLTQxNDMtOWQzMi0zYWI5Y2M2ZWE4MGIiLCJpc3MiOiJodHRwOi8vdGVzdGFjcy5jb20vIiwiYXVkIjoidXJuOnRlc3QiLCJleHAiOjE3MTA4MDczODl9.lJXm5hmkp5ArRIAHqVJGefW2bcTzd91iZphoKDwa6w8" size="150"/><br /><br />
+        <button onclick="loadPlayer()">Submit</button>
+
 
     
     <div class="container body-content">
@@ -32,13 +34,7 @@
         <div class="row">
             
            
-       <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400" data-setup='{"techOrder": ["azureHtml5JS", "flashSS", "silverlightSS", "html5"], "nativeControlsForTouch": false}'>
-
-                <source src="https://cdn-cvprsg101m01.streaming.mediaservices.windows.net/86f52e49-2c9d-4bd1-90f7-66d3cd58f6ac/8b27e677-ddba-49c2-b70c-9399feaafdd7.ism/Manifest"
-                        type="application/vnd.ms-sstr+xml"
-                        data-setup='{"protectionInfo": [{"type": "AES", "authenticationToken": "Bearer=urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=092990f4-b0be-4fd3-a0a5-bf10c1c01aed&amp;urn%3amicrosoft%3aazure%3amediaservices%3akeyacquisitionhostname=cvprsg101m01.keydelivery.mediaservices.windows.net&amp;http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net&amp;urn%3aServiceAccessible=service&amp;Audience=urn%3aNimbus&amp;ExpiresOn=1474882024&amp;Issuer=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net%2f&amp;HMACSHA256=vd5VOvPLXWrItAxH%2fHgt933EOvxAmfDlSZusXMMd51c%3d"}],"streamingFormats":["SMOOTH","DASH"]}' />
-                <source src="http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=https://cdn-cvprsg101m01.streaming.mediaservices.windows.net/86f52e49-2c9d-4bd1-90f7-66d3cd58f6ac/8b27e677-ddba-49c2-b70c-9399feaafdd7.ism/Manifest(format=m3u8-aapl)&webtoken=urn%253amicrosoft%253aazure%253amediaservices%253acontentkeyidentifier%3d092990f4-b0be-4fd3-a0a5-bf10c1c01aed%26urn%253amicrosoft%253aazure%253amediaservices%253akeyacquisitionhostname%3dcvprsg101m01.keydelivery.mediaservices.windows.net%26http%253a%252f%252fschemas.microsoft.com%252faccesscontrolservice%252f2010%252f07%252fclaims%252fidentityprovider%3dhttps%253a%252f%252fnimbuslkgglobacs.accesscontrol.windows.net%26urn%253aServiceAccessible%3dservice%26Audience%3durn%253aNimbus%26ExpiresOn%3d1474882024%26Issuer%3dhttps%253a%252f%252fnimbuslkgglobacs.accesscontrol.windows.net%252f%26HMACSHA256%3dvd5VOvPLXWrItAxH%252fHgt933EOvxAmfDlSZusXMMd51c%253d" type="application/vnd.apple.mpegurl" data-setup='{"disableUrlRewriter": true}' />
-          </video>
+       <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400"></video>
 
 
            
@@ -46,9 +42,37 @@
         </div>
     </div>
 
-    <script src="http://mingfeiy.azurewebsites.net//bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 
     <script src="http://mingfeiy.azurewebsites.net//bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+
+    <script type="text/javascript">
+        var myPlayer = amp("vid1", {
+                                techOrder: ["azureHtml5JS", "flashSS", "silverlightSS", "html5"]
+                                });
+
+
+        function loadPlayer(){
+
+            var pburl = $("#playbackurl").val();
+            var wt = $("#webtoken").val();
+            console.log(pburl);
+            console.log(encodeURI(wt));
+            myPlayer.src([
+                        { src: pburl, type:"application/vnd.ms-sstr+xml", protectionInfo: [{type: "AES", authenticationToken: wt }]},
+                        { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURI(wt), type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
+                        ]);
+        }
+
+        $("#playbackURL").on("change", loadPlayer);
+
+        $("#webtoken").on("change", loadPlayer);
+
+        $("#submit").on("click", loadPlayer);
+
+        loadPlayer();
+
+    </script>
 
 
 </body>
