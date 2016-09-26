@@ -56,7 +56,7 @@
 
             var pburl = $("#playbackurl").val();
             var wt = $("#webtoken").val();
-            wt = wt.replace(/&amp;/g, '&');
+            wt = encodeURI(wt);
             console.log(pburl);
             console.log(wt);
             myPlayer.src([
