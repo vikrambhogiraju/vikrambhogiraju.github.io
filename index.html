@@ -21,9 +21,9 @@
 <body>
     
         Manifest URL:<br />
-        <input type="text" id="playbackurl" value="http://amssamples.streaming.mediaservices.windows.net/9ead18f1-29f8-453c-8721-4becc00ff611/BigBuckBunnyTrailer.ism/manifest" size="150"/><br />
+        <input type="text" id="playbackurl" value="https://cdn-cvprsg101m01.streaming.mediaservices.windows.net/f6f65edc-2c38-4e53-bc28-45e1cdbdc01c/ec22b9d2-bb64-450e-9471-cdcc2daaf494.ism/Manifest" size="150"/><br />
         SWT :<br />
-        <input type="text" id="webtoken" value="urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=5f5076de-4322-42f7-a533-6265f686d5b9&Audience=urn%3atest&ExpiresOn=4581880130&Issuer=http%3a%2f%2ftestacs.com%2f&HMACSHA256=%2bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%3d" size="150"/><br /><br />
+        <input type="text" id="webtoken" value="urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=8a250c36-10db-42c2-8812-8c153b3b7872&urn%3amicrosoft%3aazure%3amediaservices%3akeyacquisitionhostname=cvprsg101m01.keydelivery.mediaservices.windows.net&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net&urn%3aServiceAccessible=service&Audience=urn%3aNimbus&ExpiresOn=1474897772&Issuer=https%3a%2f%2fnimbuslkgglobacs.accesscontrol.windows.net%2f&HMACSHA256=3fMhw4qiJG2WLeyjyuJzmTNu5uevbAijX5JyfCcEnpE%3d" size="150"/><br /><br />
         <button onclick="loadPlayer()">Submit</button>
 
 
@@ -55,12 +55,11 @@
         function loadPlayer(){
             var pburl = $("#playbackurl").val();
             var wt = $("#webtoken").val();
-            console.log(pburl);
-            console.log(wt);
             myPlayer.src([
-                        { src: pburl, type:"application/vnd.ms-sstr+xml", protectionInfo: [{type: "AES", authenticationToken: wt }]},
+                        { src: pburl, type:"application/vnd.ms-sstr+xml", protectionInfo: [{type: "AES", authenticationToken: "Bearer=" + wt }]},
                         { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURI(wt), type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
                         ]);
+            console.log("http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURI(wt));
         }
 
        $("#submit").on("click", loadPlayer);
