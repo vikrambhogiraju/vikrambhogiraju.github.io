@@ -53,10 +53,6 @@
 
 
         function loadPlayer(){
-            myPlayer.dispose();
-            myPlayer = amp("vid1", {
-                                techOrder: ["azureHtml5JS", "flashSS", "silverlightSS", "html5"]
-                                });
             var pburl = $("#playbackurl").val();
             var wt = $("#webtoken").val();
             console.log(pburl);
