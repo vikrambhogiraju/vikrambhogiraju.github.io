@@ -34,7 +34,17 @@
         <div class="row">
             
            
-       <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400"></video>
+       <video id="vid2" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400"></video>
+            
+
+             <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400" data-setup='{"techOrder": ["azureHtml5JS", "flashSS", "silverlightSS", "html5"], "nativeControlsForTouch": false}'>
+
+                <source src="http://amssamples.streaming.mediaservices.windows.net/9ead18f1-29f8-453c-8721-4becc00ff611/BigBuckBunnyTrailer.ism/manifest"
+                        type="application/vnd.ms-sstr+xml"
+                        data-setup='{"protectionInfo": [{"type": "AES", "authenticationToken": "Bearer=urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=5f5076de-4322-42f7-a533-6265f686d5b9&amp;Audience=urn%3atest&amp;ExpiresOn=4581880130&amp;Issuer=http%3a%2f%2ftestacs.com%2f&amp;HMACSHA256=%2bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%3d"}],"streamingFormats":["SMOOTH","DASH"]}' />
+                <source src="/Home/Manifest?playbackUrl=http://amssamples.streaming.mediaservices.windows.net/9ead18f1-29f8-453c-8721-4becc00ff611/BigBuckBunnyTrailer.ism/manifest(format=m3u8-aapl)&webtoken=urn%253amicrosoft%253aazure%253amediaservices%253acontentkeyidentifier%3d5f5076de-4322-42f7-a533-6265f686d5b9%26Audience%3durn%253atest%26ExpiresOn%3d4581880130%26Issuer%3dhttp%253a%252f%252ftestacs.com%252f%26HMACSHA256%3d%252bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%253d" type="application/vnd.apple.mpegurl" data-setup='{"disableUrlRewriter": true}' />
+          </video>
+
 
 
            
@@ -47,7 +57,7 @@
     <script src="http://mingfeiy.azurewebsites.net//bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
 
     <script type="text/javascript">
-        var myPlayer = amp("vid1", {
+        var myPlayer = amp("vid2", {
                                 techOrder: ["azureHtml5JS", "flashSS", "silverlightSS", "html5"]
                                 });
 
