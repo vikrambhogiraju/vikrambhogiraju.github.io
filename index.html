@@ -57,10 +57,10 @@
             var pburl = $("#playbackurl").val();
             var wt = $("#webtoken").val();
             console.log(pburl);
-            console.log(encodeURI(wt));
+            console.log(wt);
             myPlayer.src([
                         { src: pburl, type:"application/vnd.ms-sstr+xml", protectionInfo: [{type: "AES", authenticationToken: wt }]},
-                        { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURI(wt), type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
+                        { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + wt, type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
                         ]);
         }
 
@@ -77,4 +77,3 @@
 
 </body>
 </html>
-
