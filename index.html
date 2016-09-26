@@ -23,7 +23,7 @@
         Manifest URL:<br />
         <input type="text" id="playbackurl" value="http://amssamples.streaming.mediaservices.windows.net/9ead18f1-29f8-453c-8721-4becc00ff611/BigBuckBunnyTrailer.ism/manifest" size="150"/><br />
         SWT :<br />
-        <input type="text" id="webtoken" value="urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=5f5076de-4322-42f7-a533-6265f686d5b9&amp;Audience=urn%3atest&amp;ExpiresOn=4581880130&amp;Issuer=http%3a%2f%2ftestacs.com%2f&amp;HMACSHA256=%2bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%3d" size="150"/><br /><br />
+        <input type="text" id="webtoken" value="urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=5f5076de-4322-42f7-a533-6265f686d5b9&Audience=urn%3atest&ExpiresOn=4581880130&Issuer=http%3a%2f%2ftestacs.com%2f&HMACSHA256=%2bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%3d" size="150"/><br /><br />
         <button onclick="loadPlayer()">Submit</button>
 
 
@@ -59,7 +59,7 @@
             console.log(wt);
             myPlayer.src([
                         { src: pburl, type:"application/vnd.ms-sstr+xml", protectionInfo: [{type: "AES", authenticationToken: wt }]},
-                        { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + wt, type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
+                        { src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURI(wt), type: "application/vnd.apple.mpegurl", disableUrlRewriter: true  }
                         ]);
         }
 
