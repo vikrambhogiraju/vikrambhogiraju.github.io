@@ -52,7 +52,8 @@
     <script src="http://mingfeiy.azurewebsites.net//bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
 
     <script type="text/javascript">
-        var myPlayer = amp("vid1");
+        var myPlayer = amp("vid1", {techOrder: ["azureHtml5JS", "flashSS", "silverlightSS", "html5"],
+        "nativeControlsForTouch": false, autoplay: false});
 
 
         function loadPlayer(){
@@ -71,11 +72,6 @@
                     disableUrlRewriter: true
                 }
             ]);
-
-            console.log("http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=");
-            console.log(pburl);
-            console.log("(format=m3u8-aapl)&webtoken=");
-            console.log(encodeURIComponent(wt));
         }
 
        $("#submit").on("click", loadPlayer);
