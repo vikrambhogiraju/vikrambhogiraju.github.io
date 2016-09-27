@@ -59,11 +59,11 @@
             var pburl = $("#playbackurl").val();
             var wt = $("#webtoken").val();
             myPlayer.src([
-                {
+                /*{
                     src: pburl,
                     type:"application/vnd.ms-sstr+xml",
                     protectionInfo: [{type: "AES", authenticationToken: "Bearer=" + wt}]
-                },
+                },*/
 
                 {
                     src: "http://mingfeiy.azurewebsites.net/Home/Manifest?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURIComponent(wt),
