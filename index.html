@@ -70,7 +70,7 @@
 
                 ]
             );
-            console.log(encodeURIComponent(wt));
+            console.log("https://cvprsg101v.cloudvideo.azure.net/api/ManifestProxy?playbackUrl=" + pburl + "(format=m3u8-aapl)&webtoken=" + encodeURIComponent(wt));
         }
 
        $("#submit").on("click", loadPlayer);
