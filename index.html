@@ -4,78 +4,12 @@
     <meta charset="utf-8" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home Page</title>
-    <link href="http://mingfeiy.azurewebsites.net//Content/css?v=HMMhdy8f2fch_ApjLwFdGt9X2HF16_94OB22Qk_o6wA1" rel="stylesheet" />
-
-    <script src="http://mingfeiy.azurewebsites.net//bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
-
-
-    <link href="//amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
-    <script src="//amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
-    <script>
-        amp.options.flashSS.swf = "//amp.azure.net/libs/amp/latest/techs/StrobeMediaPlayback.2.0.swf"
-        amp.options.flashSS.plugin = "//amp.azure.net/libs/amp/latest/techs/MSAdaptiveStreamingPlugin-osmf2.0.swf"
-        amp.options.silverlightSS.xap = "//amp.azure.net/libs/amp/latest/techs/SmoothStreamingPlayer.xap"
-    </script>
-
+    <title>Vikram Bhogiraju - GitHub Pages</title>
 </head>
 <body>
-
-        Manifest URL: <br />
-        <input type="text" id="playbackurl" value="http://amssamples.streaming.mediaservices.windows.net/9ead18f1-29f8-453c-8721-4becc00ff611/BigBuckBunnyTrailer.ism/manifest" size="150"/><br />
-        SWT : <br />
-        <input type="text" id="webtoken" value="Bearer=urn%3amicrosoft%3aazure%3amediaservices%3acontentkeyidentifier=5f5076de-4322-42f7-a533-6265f686d5b9&Audience=urn%3atest&ExpiresOn=4581880130&Issuer=http%3a%2f%2ftestacs.com%2f&HMACSHA256=%2bx77Qo0CeBzP4aCntfe2sVkbKeKguOUNAebHQb53sLc%3d" size="150"/><br /><br />
-        <button onclick="loadPlayer()">Submit</button>
-
-
-
-    <div class="container body-content">
-
-
-        <div class="row">
-
-
-            <video id="vid1" class="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400"></video>
-
-        </div>
+    <div>
+        Test Website created by <a href=''>Vikram Bhogiraju</a>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-
-    <script src="http://mingfeiy.azurewebsites.net//bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
-
-    <script type="text/javascript">
-        var myPlayer = amp("vid1", {techOrder: ["azureHtml5JS", "flashSS", "silverlightSS", "html5"],
-        "nativeControlsForTouch": false, autoplay: false});
-
-
-        function loadPlayer(){
-            var pburl = $("#playbackurl").val();
-            var wt = $("#webtoken").val();
-            myPlayer.src(
-                [
-                     {
-                        src: "https://cvprsg101v.cloudvideo.azure.net/api/ManifestProxy?playbackUrl=" + pburl + "(format=m3u8-aapl)&token=" + encodeURIComponent(wt),
-                        type: "application/vnd.apple.mpegurl",
-                        disableUrlRewriter: true
-                    },
-                    {
-                        src: pburl,
-                        type:"application/vnd.ms-sstr+xml",
-                        protectionInfo: [{
-                            type: "AES",
-                            authenticationToken: wt
-                        }]
-                    },
-
-                ]
-            );
-        }
-
-       $("#submit").on("click", loadPlayer);
-
-    </script>
-
-
 </body>
 </html>
+
